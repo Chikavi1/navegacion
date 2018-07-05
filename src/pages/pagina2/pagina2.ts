@@ -23,12 +23,16 @@ export class Pagina2Page {
 	]
 
 pagina3:any = Pagina3Page;
-
+ 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  	this.navCtrl.swipeBackEnabled = true;
   }
-
+  navOptions = {
+	animation: 'md-transition',
+	duration: 1500
+};
   irPagina3(mutante:any){
   	console.log(mutante);
-  	this.navCtrl.push(Pagina3Page,{ 'persona'  : mutante})
+  	this.navCtrl.push(Pagina3Page,{ 'persona'  : mutante},this.navOptions);
   }
 }
